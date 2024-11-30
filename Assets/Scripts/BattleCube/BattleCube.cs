@@ -32,6 +32,8 @@ public class BattleCube : MonoBehaviour
         Debug.Log($"Есть пробитие, name = {collision.gameObject.name}");
         if (collision.gameObject.GetComponent<Bullet>())
             GetBreakdown?.Invoke(this);
+        else if(collision.gameObject.name.Contains("Floor"))
+            GetBreakdown?.Invoke(this);
     }
     public virtual void Initialize(Vector3 startPosition) 
     {
