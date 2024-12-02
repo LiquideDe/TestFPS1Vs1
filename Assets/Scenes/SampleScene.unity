@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 77217189}
   - component: {fileID: 77217188}
   - component: {fileID: 77217187}
+  - component: {fileID: 77217192}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -491,6 +492,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 523924116}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &77217192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77217186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab79a735a775074480bf6ba8f0bff05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &127543217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,6 +1985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 833030259}
   - component: {fileID: 833030258}
+  - component: {fileID: 833030260}
   m_Layer: 0
   m_Name: Bootstrap
   m_TagString: Untagged
@@ -1993,6 +2007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiCubePrefab: {fileID: 1009509972630589565, guid: 4a592f37b5cbb6a46b0827a3e9787e57, type: 3}
   _playerCube: {fileID: 5470502276394791853, guid: 46e99768213fd9047bcf98ac0050ae5d, type: 3}
+  _inputFromKeyboard: {fileID: 833030260}
   _orientPoints:
   - {fileID: 1278252583}
   - {fileID: 1861648543}
@@ -2040,6 +2055,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &833030260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833030257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4511e93d9e18ee7409c5800c2db7a649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &861711105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,6 +2845,7 @@ GameObject:
   - component: {fileID: 1282952467}
   - component: {fileID: 1282952466}
   - component: {fileID: 1282952465}
+  - component: {fileID: 1282952470}
   m_Layer: 0
   m_Name: Wall (4)
   m_TagString: Untagged
@@ -2938,6 +2966,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 523924116}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1282952470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282952464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab79a735a775074480bf6ba8f0bff05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1312685596
 GameObject:
   m_ObjectHideFlags: 0
@@ -3019,6 +3059,7 @@ GameObject:
   - component: {fileID: 1323623434}
   - component: {fileID: 1323623433}
   - component: {fileID: 1323623432}
+  - component: {fileID: 1323623437}
   m_Layer: 0
   m_Name: Wall (2)
   m_TagString: Untagged
@@ -3139,6 +3180,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 523924116}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1323623437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323623431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab79a735a775074480bf6ba8f0bff05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1358043638
 GameObject:
   m_ObjectHideFlags: 0
@@ -3564,6 +3617,7 @@ GameObject:
   - component: {fileID: 1548700083}
   - component: {fileID: 1548700082}
   - component: {fileID: 1548700081}
+  - component: {fileID: 1548700085}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -3658,6 +3712,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1548700085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548700080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c355f6006cc1be44b377035cff7de98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1555097237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3789,6 +3855,7 @@ GameObject:
   - component: {fileID: 1667123283}
   - component: {fileID: 1667123282}
   - component: {fileID: 1667123281}
+  - component: {fileID: 1667123286}
   m_Layer: 0
   m_Name: Wall (3)
   m_TagString: Untagged
@@ -3909,6 +3976,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 523924116}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667123286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667123280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab79a735a775074480bf6ba8f0bff05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1684508194
 GameObject:
   m_ObjectHideFlags: 0
@@ -4040,6 +4119,7 @@ GameObject:
   - component: {fileID: 1771901737}
   - component: {fileID: 1771901736}
   - component: {fileID: 1771901735}
+  - component: {fileID: 1771901740}
   m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Untagged
@@ -4160,6 +4240,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 523924116}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1771901740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771901734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab79a735a775074480bf6ba8f0bff05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1781878501
 GameObject:
   m_ObjectHideFlags: 0
@@ -4872,9 +4964,9 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 833030259}
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 523924116}
   - {fileID: 1548700084}
   - {fileID: 1312685599}
-  - {fileID: 833030259}
