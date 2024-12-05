@@ -15,15 +15,17 @@ namespace FPS
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.W)) Forward?.Invoke();
-            else if (Input.GetKeyDown(KeyCode.S)) Back?.Invoke();
-
             if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S)) StopMove?.Invoke();
 
-            if (Input.GetKeyDown(KeyCode.D)) TurnRight?.Invoke();
-            else if (Input.GetKeyDown(KeyCode.A)) TurnLeft?.Invoke();
-
             if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A)) StopRotate?.Invoke();
+
+            if (Input.GetKeyDown(KeyCode.W)) Forward?.Invoke();
+
+            if (Input.GetKeyDown(KeyCode.S)) Back?.Invoke();
+
+            if (Input.GetKeyDown(KeyCode.D)) TurnRight?.Invoke();
+            
+            if (Input.GetKeyDown(KeyCode.A)) TurnLeft?.Invoke();
 
             if (Input.GetKeyDown(KeyCode.Space)) Fire?.Invoke();
         }

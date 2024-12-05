@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace FPS
 {
@@ -8,20 +7,21 @@ namespace FPS
     {
         private BattleCube[] _battleCubes;
         private View _view;
+        private ViewLog _viewLog;
         private RuleStartStopGame _ruleStartStopGame;
         private PlayerController _playerController;
         private List<Bullet> _bullets = new List<Bullet>();
-        private List<string> _stringActions = new List<string>();
         private int _aiWin = 0, _playerWin = 0;
         private bool _isBattleStart = false;
 
-        public Presenter(View view, RuleStartStopGame ruleStartStopGame, BattleCube[] battleCubes, PlayerController playerController)
+        public Presenter(View view,ViewLog viewLog, RuleStartStopGame ruleStartStopGame, BattleCube[] battleCubes, PlayerController playerController)
         {
             _view = view;
             _battleCubes = new BattleCube[battleCubes.Length];
             _battleCubes = battleCubes;
             _playerController = playerController;
             _ruleStartStopGame = ruleStartStopGame;
+            _viewLog = viewLog;
             Subscribe();
         }
 
@@ -43,12 +43,7 @@ namespace FPS
         {
             if (_isBattleStart)
             {
-                _stringActions.Add(textAction + "\n");
-                if (_stringActions.Count > 31)
-                    _stringActions.RemoveAt(0);
-
-                string textToSend = String.Join(", ", _stringActions.Select(t => t));
-                _view.SetActionsText(textToSend);
+                _viewLog.AddAction(textAction);
             }            
         }        
 

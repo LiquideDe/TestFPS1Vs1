@@ -25,9 +25,10 @@ namespace FPS
             playerCube.Initialize(_startPositionPlayer.position);
 
             RuleStartStopGame ruleStartStopGame = view.GetComponent<RuleStartStopGame>();
+            ViewLog viewLog = view.GetComponent<ViewLog>();
             PlayerController playerController = new PlayerController(playerCube, _inputFromKeyboard);
 
-            Presenter presenter = new Presenter(view, ruleStartStopGame, battleCubes, playerController);
+            Presenter presenter = new Presenter(view, viewLog, ruleStartStopGame, battleCubes, playerController);
         }
     }
 }

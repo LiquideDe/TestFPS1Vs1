@@ -2037,7 +2037,7 @@ MonoBehaviour:
   - {fileID: 159724808}
   - {fileID: 861711110}
   - {fileID: 127543222}
-  _viewPrefab: {fileID: 6134758970453684654, guid: 005ebba68a2cbca49904d43fdc736679, type: 3}
+  _viewPrefab: {fileID: 3437006626988642170, guid: 73445491a38b42a4283b485ffd47fc91, type: 3}
   _startPositionPlayer: {fileID: 686697913}
   _startPositionAi: {fileID: 1190995017}
 --- !u!4 &833030259
