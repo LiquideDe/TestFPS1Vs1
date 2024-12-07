@@ -29,6 +29,8 @@ namespace FPS
             PlayerController playerController = new PlayerController(playerCube, _inputFromKeyboard);
 
             Presenter presenter = new Presenter(view, viewLog, ruleStartStopGame, battleCubes, playerController);
+
+            Analytics analytics = new Analytics(ruleStartStopGame, playerCube, aICube);
         }
     }
 }

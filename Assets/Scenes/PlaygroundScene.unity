@@ -1986,6 +1986,7 @@ GameObject:
   - component: {fileID: 833030259}
   - component: {fileID: 833030258}
   - component: {fileID: 833030260}
+  - component: {fileID: 833030261}
   m_Layer: 0
   m_Name: Bootstrap
   m_TagString: Untagged
@@ -2065,6 +2066,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4511e93d9e18ee7409c5800c2db7a649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &833030261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833030257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 619d02093c33f4b468500d784d7abe5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &861711105

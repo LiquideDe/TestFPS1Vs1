@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1052485321267",
+    "project_id": "mytestprojectfps",
+    "storage_bucket": "mytestprojectfps.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052485321267:android:988d1377098f28c7455946",
+        "android_client_info": {
+          "package_name": "com.LiquideDe.TestFPS1Vs1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEGOEA2sAgUoxZTudrr6Jx9-Rkgaqs3H8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
