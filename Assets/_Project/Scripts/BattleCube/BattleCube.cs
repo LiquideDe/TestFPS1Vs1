@@ -14,6 +14,7 @@ namespace FPS
         private readonly int _maxSpeed = 5;
         private Vector3 _eulerAngle = Vector3.zero;
         private int _speed = 0;
+        private int _bonusSpeed = 1;
         private Vector3 _startPosition;
         protected bool _isGameStarted = false;
 
@@ -30,7 +31,12 @@ namespace FPS
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.TryGetComponent<Bullet>(out Bullet bullet))
-                GetBreakdown?.Invoke(this);
+            {
+                if(bullet.IsBulletOld)
+                    GetBreakdown?.Invoke(this);
+                else if(bullet.IsBulletOld == false && bullet.BattleCubeSender != this)
+                    GetBreakdown?.Invoke(this);
+            }                
             else if (collision.gameObject.TryGetComponent<Floor>(out Floor floor))
                 GetBreakdown?.Invoke(this);
         }
@@ -49,6 +55,7 @@ namespace FPS
         public void StopGame()
         {
             _isGameStarted = false;
+            _bonusSpeed = 1;
             StopCube();
             StopRotate();
         }
@@ -58,7 +65,7 @@ namespace FPS
             if (_isGameStarted)
             {
                 Bullet bullet = Instantiate(_bulletPrefab);
-                bullet.Fire(_bulletPrefab.transform.position, _rigidbody.transform.forward);
+                bullet.Fire(_bulletPrefab.transform.position, _rigidbody.transform.forward, this);
                 BulletInAir?.Invoke(bullet);
             }
         }
@@ -69,11 +76,13 @@ namespace FPS
 
         public void StopRotate() => _eulerAngle = Vector3.zero;
 
-        public void FullForward() => _speed = _maxSpeed;
+        public void FullForward() => _speed = _maxSpeed * _bonusSpeed;
 
-        public void FullBack() => _speed = _maxSpeed * -1;
+        public void FullBack() => _speed = _maxSpeed * -1 * _bonusSpeed;
 
         public void StopCube() => _speed = 0;
+
+        public void BoostSpeed() => _bonusSpeed = 2;
 
     }
 }

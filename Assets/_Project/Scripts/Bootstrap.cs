@@ -12,6 +12,7 @@ namespace FPS
         [SerializeField] private List<OrientPoint> _orientPoints;
         [SerializeField] private View _viewPrefab;
         [SerializeField] private Transform _startPositionPlayer, _startPositionAi;
+        [SerializeField] private Mediator _mediator;
 
         // Start is called before the first frame update
         void Start()
@@ -29,6 +30,7 @@ namespace FPS
             PlayerController playerController = new PlayerController(playerCube, _inputFromKeyboard);
 
             Presenter presenter = new Presenter(view, viewLog, ruleStartStopGame, battleCubes, playerController);
+            _mediator.Initialize(presenter, playerCube);
 
             Analytics analytics = new Analytics(ruleStartStopGame, playerCube, aICube);
         }

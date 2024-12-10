@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 5698069281710213778}
+  _collider: {fileID: 1356964228463881134}
 --- !u!1 &8945081002760081661
 GameObject:
   m_ObjectHideFlags: 0

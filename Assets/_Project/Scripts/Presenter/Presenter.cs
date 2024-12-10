@@ -5,6 +5,8 @@ namespace FPS
 {
     public class Presenter
     {
+        public event Action PlayerWin;
+        public event Action PlayerLoose;
         private BattleCube[] _battleCubes;
         private View _view;
         private ViewLog _viewLog;
@@ -56,9 +58,15 @@ namespace FPS
             _bullets.Clear();
 
             if (cube is AICube)
+            {
                 _playerWin++;
+                PlayerWin?.Invoke();
+            }
             else
+            {
                 _aiWin++;
+                PlayerLoose?.Invoke();
+            }                
 
             _view.SetCounts($"Игрок {_playerWin}:{_aiWin} Компьютер");
         }
