@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
 using System;
+using Zenject;
 
 namespace FPS
 {
@@ -12,15 +13,24 @@ namespace FPS
         [SerializeField] private Button _buttonInterstitialAd;
 
         public event Action AdsFinished;
-        string _adUnitId;
+        private string _adUnitId;
+        private IMenuSounds _menuSounds;
 
-        private void OnEnable() => _buttonInterstitialAd.onClick.AddListener(ShowAd);
+        [Inject]
+        private void Construct(AudioManager audioManager) => _menuSounds = audioManager;
+
+        private void OnEnable() {
+            if (PlayerPrefs.GetInt("removeAds") == 1 || Platform.IsPc)
+                _buttonInterstitialAd.onClick.AddListener(PassAdversity);
+            else
+                _buttonInterstitialAd.onClick.AddListener(ShowAd); 
+
+        }
 
         private void OnDisable() => _buttonInterstitialAd.onClick?.RemoveAllListeners();
 
         void Awake()
         {
-            // Get the Ad Unit ID for the current platform:
             _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
                 ? _iOsAdUnitId
                 : _androidAdUnitId;
@@ -34,6 +44,7 @@ namespace FPS
 
         public void ShowAd()
         {
+            _menuSounds.PlayClick();
             Advertisement.Show(_adUnitId, this);
         }
 
@@ -57,7 +68,13 @@ namespace FPS
 
         public void OnUnityAdsShowStart(string _adUnitId) { }
         public void OnUnityAdsShowClick(string _adUnitId) { }
-        public void OnUnityAdsShowComplete(string _adUnitId, UnityAdsShowCompletionState showCompletionState) { AdsFinished?.Invoke(); }
+        public void OnUnityAdsShowComplete(string _adUnitId, UnityAdsShowCompletionState showCompletionState) 
+        { 
+            AdsFinished?.Invoke();
+            _menuSounds.PlayClick();
+        }
+
+        private void PassAdversity() => AdsFinished?.Invoke();
     }
 }
 

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
 using System;
+using Zenject;
 
 namespace FPS
 {
@@ -13,15 +14,18 @@ namespace FPS
 
         public event Action AdsFinished;
         string _adUnitId = null; // This will remain null for unsupported platforms
+        private IMenuSounds _menuSounds;
 
+        [Inject]
+        private void Construct(AudioManager audioManager) => _menuSounds = audioManager;
         void Awake()
         {
             // Get the Ad Unit ID for the current platform:
-#if UNITY_IOS
+            #if UNITY_IOS
         _adUnitId = _iOSAdUnitId;
-#elif UNITY_ANDROID
+            #elif UNITY_ANDROID
             _adUnitId = _androidAdUnitId;
-#endif
+            #endif
 
             // Disable the button until the ad is ready to show:
             _showAdButton.interactable = false;
@@ -43,6 +47,7 @@ namespace FPS
             if (adUnitId.Equals(_adUnitId))
             {
                 // Configure the button to call the ShowAd() method when clicked:
+
                 _showAdButton.onClick.AddListener(ShowAd);
                 // Enable the button for users to click:
                 _showAdButton.interactable = true;
@@ -56,6 +61,7 @@ namespace FPS
             _showAdButton.interactable = false;
             // Then show the ad:
             Advertisement.Show(_adUnitId, this);
+            _menuSounds.PlayClick();
         }
 
         // Implement the Show Listener's OnUnityAdsShowComplete callback method to determine if the user gets a reward:
@@ -63,8 +69,7 @@ namespace FPS
         {
             if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
             {
-                Debug.Log("Unity Ads Rewarded Ad Completed");
-                AdsFinished?.Invoke();
+                AdsShowedOrPassed();
                 // Grant a reward.
             }
         }
@@ -90,6 +95,8 @@ namespace FPS
             // Clean up the button listeners:
             _showAdButton.onClick.RemoveAllListeners();
         }
+
+        private void AdsShowedOrPassed() => AdsFinished?.Invoke();
     }
 }
 

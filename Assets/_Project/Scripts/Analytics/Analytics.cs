@@ -4,17 +4,17 @@ namespace FPS
 {
     public class Analytics
     {
-        private RuleStartStopGame _ruleStartStopGame;
-        private PlayerCube _playerCube;
-        private AICube _aICube;
+        private BattlegroundView _view;
+        private BattleCube _playerCube;
+        private BattleCube _aICube;
         private int _amountRounds = 0;
         private int _amountBullets = 0;
         private int _playerWins = 0;
         private int _aiWins = 0;
 
-        public Analytics(RuleStartStopGame ruleStartStopGame, PlayerCube playerCube, AICube aICube)
+        public Analytics(BattlegroundView view, BattleCube playerCube, BattleCube aICube)
         {
-            _ruleStartStopGame = ruleStartStopGame;
+            _view = view;
             _playerCube = playerCube;
             _aICube = aICube;
             Subscribe();
@@ -22,8 +22,8 @@ namespace FPS
 
         private void Subscribe()
         {
-            _ruleStartStopGame.StartGame += StartGame;
-            _ruleStartStopGame.StopGame += StopGame;
+            _view.StartGame += StartGame;
+            _view.StopGame += StopGame;
             _playerCube.BulletInAir += BulletInAir;
             _playerCube.GetBreakdown += AiWin;
             _aICube.GetBreakdown += PlayerWin;

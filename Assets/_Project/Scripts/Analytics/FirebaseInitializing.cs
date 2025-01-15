@@ -1,38 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Firebase;
 using Firebase.Extensions;
 using System.Threading.Tasks;
 using System;
 
-public class FirebaseInitializing : MonoBehaviour
+namespace FPS
 {
-
-    void Start()
+    public class FirebaseInitializing : MonoBehaviour
     {
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(OnDependencyStatusReceived);
-    }
 
-    private void OnDependencyStatusReceived(Task<DependencyStatus> task) 
-    {
-        try
+        void Start()
         {
-            if (!task.IsCompletedSuccessfully)
-                throw new Exception("Could not resolve all Firebase dependencies", task.Exception);
-
-            var status = task.Result;
-            if (status != DependencyStatus.Available)
-                throw new Exception($"Could not resolve all Firebase dependencies, {status}");
-
-            Debug.Log($"Firebase initializing successfull");
+            FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(OnDependencyStatusReceived);
         }
 
-        catch (Exception ex) 
+        private void OnDependencyStatusReceived(Task<DependencyStatus> task)
         {
-            Debug.LogException(ex);
-        }
-        
-    }
+            try
+            {
+                if (!task.IsCompletedSuccessfully)
+                    throw new Exception("Could not resolve all Firebase dependencies", task.Exception);
 
+                var status = task.Result;
+                if (status != DependencyStatus.Available)
+                    throw new Exception($"Could not resolve all Firebase dependencies, {status}");
+
+                Debug.Log($"Firebase initializing successfull");
+            }
+
+            catch (Exception ex)
+            {
+                Debug.LogException(ex);
+            }
+
+        }
+
+    }
 }
+
+

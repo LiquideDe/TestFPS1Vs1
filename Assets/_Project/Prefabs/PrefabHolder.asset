@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eeb774608db9f24594a274f926f10b0, type: 3}
+  m_Name: PrefabHolder
+  m_EditorClassIdentifier: 
+  _mainmenu: {fileID: 5649246457756393552, guid: c6cb73c23473ee84f9e22d0d3a0e42ed, type: 3}
+  _battlegroundView: {fileID: 870969632732170978, guid: 73445491a38b42a4283b485ffd47fc91, type: 3}
+  _advertising: {fileID: 2259373626560314657, guid: 6289d932520bba44d8e5676f4d3a44d7, type: 3}
+  _timer: {fileID: 3787821437447456222, guid: 909f417cd4b70d14daac05d0547d31d6, type: 3}
+  _gameOverPanel: {fileID: 8058130285701280071, guid: 6f1384a8380e24b49b79faf3892b8f19, type: 3}
+  _shop: {fileID: 7021613094404516650, guid: 7971f3fbb5fa62d47ba90fbc80143193, type: 3}
